@@ -1,0 +1,476 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+#include "verrsrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""verrsrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#include ""res\\InventoryManager.rc2""  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.\r\n"
+    "#include ""l.KOR\\afxres.rc""      // 표준 구성 요소\r\n"
+    "#if !defined(_AFXDLL)\r\n"
+    "#include ""l.KOR\\afxribbon.rc""   // MFC 리본 및 컨트롤 막대 리소스\r\n"
+    "#endif\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\InventoryManager.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INVENTORYMANAGER_DIALOG DIALOGEX 0, 0, 500, 400
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_LOG,7,316,486,80,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "📋 활동 로그",IDC_STATIC_LOG_LABEL,7,302,35,8
+    CONTROL         "",IDC_TAB_MAIN,"SysTabControl32",0x0,7,39,486,245
+    PUSHBUTTON      "🔄 새로고침",IDC_BUTTON_REFRESH,449,19,41,13
+    PUSHBUTTON      "로그 지우기",IDC_BUTTON_CLEAR_LOG,443,299,50,14
+    CONTROL         "",IDC_LIST_INVENTORY,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,14,56,471,221,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "📦 발주",IDC_BUTTON_ORDER,14,284,50,14
+    PUSHBUTTON      "품목 삭제",IDC_BUTTON2,70,284,50,14
+    PUSHBUTTON      "품목 추가",IDC_BUTTON3,127,284,50,14
+    EDITTEXT        IDC_EDIT_SEARCH,16,19,81,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "검색",IDC_BTN_SEARCH,202,19,50,14
+    LTEXT           "Static",IDC_PLACE_STATS,8,52,485,232
+    COMBOBOX        IDC_COMBO_FILTER_BRAND,99,20,48,79,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FILTER_CATEGORY,151,20,48,63,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Static",IDC_PLACE_STATS2,8,52,485,230
+    PUSHBUTTON      "내보내기",IDC_BUTTON_EXPORT_INV,183,284,50,14
+    PUSHBUTTON      "AI 추천 발주",IDC_BTN_AI_ORDER,393,19,50,14
+END
+
+IDD_DIALOG_ORDER DIALOGEX 0, 0, 301, 250
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "발주하기"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "상품 정보",IDC_STATIC,14,17,32,8
+    GROUPBOX        "상품 정보",IDC_STATIC_ORDER_INFO,15,31,269,84
+    LTEXT           "품번: ",IDC_STATIC_OPTION_CODE,25,49,115,8
+    LTEXT           "상품명: ",IDC_STATIC_PRODUCT_NAME,25,70,147,8
+    LTEXT           "현재 재고: ",IDC_STATIC_CURRENT_STOCK,25,91,145,8
+    LTEXT           "발주 수량",IDC_STATIC,104,125,32,8
+    EDITTEXT        IDC_EDIT_ORDER_QUANTITY,149,122,47,14,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "-10",IDC_BUTTON_MINUS_10,40,151,50,14
+    PUSHBUTTON      "-5",IDC_BUTTON_MINUS_5,94,151,50,14
+    PUSHBUTTON      "+5",IDC_BUTTON_PLUS_5,148,151,50,14
+    PUSHBUTTON      "+10",IDC_BUTTON_PLUS_10,202,151,50,14
+    LTEXT           "발주 후 예상: ",IDC_STATIC_EXPECTED_STOCK,95,185,101,8
+    PUSHBUTTON      "취소",IDCANCEL,93,220,50,14
+    PUSHBUTTON      "📦 발주 확정",IDOK,148,220,50,14
+END
+
+IDD_DIALOG_EDIT_STOCK DIALOGEX 0, 0, 201, 186
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "재고 수정"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "품번:",IDC_STATIC,17,20,18,8
+    LTEXT           "상품명:",IDC_STATIC,17,42,26,8
+    LTEXT           "현재 재고:",IDC_STATIC,17,64,35,8
+    LTEXT           "새 재고 수량:",IDC_STATIC,17,86,44,8
+    LTEXT           "Static",IDC_STATIC,115,86,19,8
+    EDITTEXT        IDC_EDIT_NEW_STOCK,65,84,40,14,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Static",IDC_STATIC_OPTION_CODE_EDIT,65,20,19,8
+    LTEXT           "Static",IDC_STATIC_PRODUCT_NAME_EDIT,65,42,19,8
+    LTEXT           "Static",IDC_STATIC_CURRENT_STOCK_EDIT,65,64,19,8
+    PUSHBUTTON      "취소",IDCANCEL,47,155,50,14
+    DEFPUSHBUTTON   "저장",IDOK,99,155,50,14
+END
+
+IDD_DIALOG_EDIT_STOCK1 DIALOG 0, 0, 320, 200
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "대화 상자"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,209,179,50,14
+    PUSHBUTTON      "취소",IDCANCEL,263,179,50,14
+END
+
+IDD_ADD_PRODUCT DIALOGEX 0, 0, 319, 186
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION " "
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,198,163,50,14
+    PUSHBUTTON      "취소",IDCANCEL,262,163,50,14
+    LTEXT           "상품명",IDC_STATIC,13,36,25,8
+    EDITTEXT        IDC_EDIT_PRODUCTNAME,39,32,260,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_COLOR,107,50,48,74,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BRAND,37,50,48,74,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SIZE,183,50,48,72,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "브랜드",IDC_STATIC,14,53,23,8
+    LTEXT           "사이즈",IDC_STATIC,157,52,23,8
+    LTEXT           "색상",IDC_STATIC,88,52,16,8
+    COMBOBOX        IDC_COMBO_WERE,251,51,48,68,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "종류",IDC_STATIC,235,52,16,8
+    EDITTEXT        IDC_PRODUCT_NUM,40,137,260,14,ES_AUTOHSCROLL
+    LTEXT           "품번",IDC_STATIC,14,141,16,8
+    LTEXT           "초기 재고",IDC_STATIC,202,77,32,8
+    EDITTEXT        IDC_EDIT_BASE_STOCK,237,74,62,14,ES_AUTOHSCROLL
+    LTEXT           "가격 설정",IDC_STATIC,105,77,32,8
+    EDITTEXT        IDC_EDIT_PRICE,139,74,62,14,ES_AUTOHSCROLL
+    LTEXT           "상품설명",IDC_STATIC,12,98,30,8
+    EDITTEXT        IDC_EDIT_DESCRIPTION,50,95,249,14,ES_MULTILINE | ES_AUTOHSCROLL
+    LTEXT           "이미지 링크",IDC_STATIC,10,119,40,8
+    EDITTEXT        IDC_EDIT_IMAGE_URL,50,116,249,14,ES_MULTILINE | ES_AUTOHSCROLL
+END
+
+IDD_STATS_DIALOG DIALOGEX 0, 0, 579, 270
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_STATS_BRAND,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,202,139,181,109
+    CONTROL         "",IDC_LIST_STATS_ORDERS,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,0,565,111
+    CONTROL         "",IDC_LIST_STATS_DAILY,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,387,139,185,109
+    LTEXT           "조회 기간:",IDC_STATIC_PERIOD_LABEL,18,118,35,8
+    CONTROL         "",IDC_DATETIMEPICKER_START,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,54,116,61,15
+    CTEXT           "~",IDC_STATIC,122,119,8,8
+    CONTROL         "",IDC_DATETIMEPICKER_END,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,138,116,61,15
+    PUSHBUTTON      "조회",IDC_BUTTON_SEARCH_PERIOD,207,115,50,18
+    CONTROL         "",IDC_STATIC_GRAPH,"Static",SS_BLACKFRAME,7,135,192,116
+END
+
+IDD_SETTINGS_DIALOG DIALOGEX 0, 0, 543, 256
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_WARNING,67,22,58,14,ES_AUTOHSCROLL
+    LTEXT           "경고 기준",IDC_STATIC_WARNING,31,25,32,8
+    LTEXT           "위험 기준",IDC_STATIC_DANGER,31,41,32,8
+    EDITTEXT        IDC_EDIT_DANGER,67,40,59,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "적용",IDC_BUTTON_APPLY,31,62,96,14
+    GROUPBOX        "",IDC_STATIC_GROUP,148,7,382,86
+    LTEXT           "호스트",IDC_STATIC,159,37,23,8
+    LTEXT           "포트",IDC_STATIC,159,54,16,8
+    LTEXT           "DB명",IDC_STATIC,247,36,17,8
+    LTEXT           "사용자(ID)",IDC_STATIC,247,53,36,8
+    LTEXT           "비밀번호(PW)",IDC_STATIC,351,37,46,8
+    EDITTEXT        IDC_EDIT_DB_HOST,183,33,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DB_PORT,183,51,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DB_NAME,288,33,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DB_USER,288,51,57,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DB_PASS,401,34,58,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "DB적용",IDC_BTN_SAVE_DB,466,34,57,14
+    GROUPBOX        "",IDC_STATIC,11,7,133,86
+    GROUPBOX        "자동 발주 설정",IDC_STATIC_AUTO_ORDER_GROUP,11,96,199,148
+    CONTROL         "자동 발주 활성화",IDC_CHECK_AUTO_ORDER_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,111,71,10
+    LTEXT           "발주 기준 재고:",IDC_STATIC,29,143,52,8
+    EDITTEXT        IDC_EDIT_AUTO_ORDER_THRESHOLD,85,140,66,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "개 이하",IDC_STATIC,155,144,25,8
+    LTEXT           "발주 수량:",IDC_STATIC,45,163,35,8
+    EDITTEXT        IDC_EDIT_AUTO_ORDER_QUANTITY,85,159,66,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "개",IDC_STATIC,155,164,8,8
+    LTEXT           "체크 주기:",IDC_STATIC,45,182,35,8
+    EDITTEXT        IDC_EDIT_AUTO_ORDER_INTERVAL,85,179,66,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "초",IDC_STATIC,155,183,8,8
+    PUSHBUTTON      "적용",IDC_BUTTON_AUTO_ORDER_APPLY,153,221,50,14
+END
+
+IDD_BULK_ORDER_DIALOG DIALOGEX 0, 0, 183, 127
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "일괄 발주"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,20,88,50,14
+    PUSHBUTTON      "취소",IDCANCEL,74,88,50,14
+    LTEXT           "일괄 발주 수량",IDC_STATIC,16,18,49,8
+    EDITTEXT        IDC_EDIT_BULK_QUANTITY,73,15,56,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "N개의 품목에 대해...",IDC_STATIC_ITEM_COUNT,21,55,148,8
+END
+
+IDD_AUTO_ORDER_NOTIFY DIALOGEX 0, 0, 199, 194
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "자동 발주 알림"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "총 0개 품목이 발주 기준 이하입니다.",IDC_STATIC_NOTIFY_SUMMARY,22,22,148,8
+    CONTROL         "",IDC_LIST_AUTO_ORDER_ITEMS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,20,47,160,100
+    PUSHBUTTON      "모두 발주 확정",IDOK,19,160,50,14
+    PUSHBUTTON      "나중에 확인",IDCANCEL,75,160,50,14
+    PUSHBUTTON      "무시",IDC_BUTTON_IGNORE,131,160,50,14
+END
+
+IDD_AI_ORDER_DIALOG DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "발주확정",IDOK,198,155,50,14
+    PUSHBUTTON      "취소",IDCANCEL,252,155,50,14
+    CONTROL         "",IDC_LIST_AI_RECOMMEND,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,24,295,121
+    LTEXT           "📢 최근 30일 판매 데이터를 기반으로 부족한 재고를 추천합니다.",IDC_STATIC,7,7,281,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "TODO: <회사 이름>"
+            VALUE "FileDescription", "InventoryManager"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "InventoryManager.exe"
+            VALUE "LegalCopyright", "TODO: (c) <회사 이름>.  All rights reserved."
+            VALUE "OriginalFilename", "InventoryManager.exe"
+            VALUE "ProductName", "TODO: <제품 이름>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_INVENTORYMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 493
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 396
+    END
+
+    IDD_DIALOG_ORDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_DIALOG_EDIT_STOCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_DIALOG_EDIT_STOCK1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_ADD_PRODUCT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_STATS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 572
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+
+    IDD_SETTINGS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 534
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 249
+    END
+
+    IDD_BULK_ORDER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 176
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_AUTO_ORDER_NOTIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_AI_ORDER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_INVENTORYMANAGER_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_ORDER AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_EDIT_STOCK AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_ADD_PRODUCT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_STATS_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_SETTINGS_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_BULK_ORDER_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_AUTO_ORDER_NOTIFY AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_AI_ORDER_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#include "res\InventoryManager.rc2"  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.
+#include "l.KOR\afxres.rc"      // 표준 구성 요소
+#if !defined(_AFXDLL)
+#include "l.KOR\afxribbon.rc"   // MFC 리본 및 컨트롤 막대 리소스
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
